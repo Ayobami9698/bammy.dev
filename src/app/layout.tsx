@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Changa_One } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +12,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const changaOne = Changa_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-heading",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +33,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${changaOne.variable} antialiased min-h-full bg-cover bg-center bg-no-repeat bg-fixed`}
+        style={{ backgroundImage: "url('/Images/background2.jpg')" }}
       >
-        {children}
+        <main className="`${changaOne.variable}`">
+          <div>
+            <Navbar />
+          </div>
+          <div>{children}</div>
+
+          <Footer />
+        </main>
       </body>
     </html>
   );
