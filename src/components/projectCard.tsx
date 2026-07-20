@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProjectCard({ project }) {
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  link: string;
+  image: string;
+};
+
+export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg shadow-black overflow-hidden hover:shadow-2xl transition-shadow duration-300 justify-evenly">
       <Image
