@@ -4,6 +4,12 @@
 import SkillBadge from "../../components/skillBadge";
 import { motion } from "framer-motion";
 
+type SkillCircleProps = {
+  skill: string;
+  percentage: number;
+  color: string;
+};
+
 export default function About() {
   const certifications = [
     {
@@ -22,7 +28,7 @@ export default function About() {
     { name: "React.js", percentage: 75, color: "#A855F7" },
   ];
 
-  const SkillCircle = ({ skill, percentage, color }) => {
+  const SkillCircle = ({ skill, percentage, color }: SkillCircleProps) => {
     const radius = 90;
     const stroke = 12;
     const normalizedRadius = radius - stroke * 0.5;
