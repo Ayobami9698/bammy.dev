@@ -11,7 +11,7 @@ type Project = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg shadow-black overflow-hidden hover:shadow-2xl transition-shadow duration-300 justify-evenly">
+    <div className=" dark:bg-gray-800 rounded-lg shadow-lg shadow-black overflow-hidden hover:shadow-2xl transition-shadow duration-300 justify-evenly">
       <Image
         src={project.image}
         alt={project.title}

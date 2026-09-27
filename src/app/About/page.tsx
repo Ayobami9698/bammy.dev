@@ -1,167 +1,199 @@
 // import SkillBadge from "../../components/SkillBadge";
 "use client";
+import Skills from "@/components/skills";
+import Link from "next/link";
 
-import SkillBadge from "../../components/skillBadge";
-import { motion } from "framer-motion";
+// import SkillBadge from "../../components/skillBadge";
+// import { motion } from "framer-motion";
 
-type SkillCircleProps = {
-  skill: string;
-  percentage: number;
-  color: string;
-};
+// type SkillCircleProps = {
+//   skill: string;
+//   percentage: number;
+//   color: string;
+// };
 
 export default function About() {
-  const certifications = [
-    {
-      title: "Entry level Java-script programmer",
-      issuer: "OpenEDG",
-      year: "2024",
-      link: "https://verify.openedg.org/?id=LM95.oMAh.zTvw",
-    },
-  ];
+  // const certifications = [
+  //   {
+  //     title: "Entry level Java-script programmer",
+  //     issuer: "OpenEDG",
+  //     year: "2024",
+  //     link: "https://verify.openedg.org/?id=LM95.oMAh.zTvw",
+  //   },
+  // ];
 
-  const skills = [
-    { name: "HTML", percentage: 95, color: "#3B82F6" },
-    { name: "CSS", percentage: 90, color: "#10B981" },
-    { name: "JavaScript", percentage: 80, color: "#A855F7" },
-    { name: "Next.js", percentage: 75, color: "#D4AF37" },
-    { name: "React.js", percentage: 75, color: "#A855F7" },
-  ];
+  // const skills = [
+  //   { name: "HTML", percentage: 95, color: "#3B82F6" },
+  //   { name: "CSS", percentage: 90, color: "#10B981" },
+  //   { name: "JavaScript", percentage: 80, color: "#A855F7" },
+  //   { name: "Next.js", percentage: 75, color: "#D4AF37" },
+  //   { name: "React.js", percentage: 75, color: "#A855F7" },
+  // ];
 
-  const SkillCircle = ({ skill, percentage, color }: SkillCircleProps) => {
-    const radius = 90;
-    const stroke = 12;
-    const normalizedRadius = radius - stroke * 0.5;
-    const circumference = normalizedRadius * 2 * Math.PI;
-    const strokeDashoffset = circumference - (percentage / 100) * circumference;
+  // const SkillCircle = ({ skill, percentage, color }: SkillCircleProps) => {
+  //   const radius = 90;
+  //   const stroke = 12;
+  //   const normalizedRadius = radius - stroke * 0.5;
+  //   const circumference = normalizedRadius * 2 * Math.PI;
+  //   const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
-    return (
-      <div className="flex flex-col items-center relative">
-        <svg height={radius * 2} width={radius * 2}>
-          {/* Background circle */}
-          {/* <circle
-            stroke="#374151"
-            fill="transparent"
-            strokeWidth={stroke}
-            r={normalizedRadius}
-            cx={radius}
-            cy={radius}
-          /> */}
-          {/* Progress circle */}
-          <motion.circle
-            stroke={color}
-            fill="transparent"
-            strokeWidth={stroke}
-            strokeDasharray={circumference}
-            r={normalizedRadius}
-            cx={radius}
-            cy={radius}
-            transform={`rotate(-90 ${radius} ${radius})`}
-            initial={{ strokeDashoffset: circumference }}
-            animate={{
-              strokeDashoffset:
-                circumference - (percentage / 100) * circumference,
-            }}
-            transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
-          />
-          <text
-            className="text-slate-300 font-bold text-lg"
-            x="50%"
-            y="50%"
-            textAnchor="middle"
-            dy=".3em"
-          >
-            {percentage}%
-          </text>
-        </svg>
+  //   return (
+  //     <div className="flex flex-col items-center relative">
+  //       <svg height={radius * 2} width={radius * 2}>
+  //         {/* Background circle */}
+  //         {/* <circle
+  //           stroke="#374151"
+  //           fill="transparent"
+  //           strokeWidth={stroke}
+  //           r={normalizedRadius}
+  //           cx={radius}
+  //           cy={radius}
+  //         /> */}
+  //         {/* Progress circle */}
+  //         <motion.circle
+  //           stroke={color}
+  //           fill="transparent"
+  //           strokeWidth={stroke}
+  //           strokeDasharray={circumference}
+  //           r={normalizedRadius}
+  //           cx={radius}
+  //           cy={radius}
+  //           transform={`rotate(-90 ${radius} ${radius})`}
+  //           initial={{ strokeDashoffset: circumference }}
+  //           animate={{
+  //             strokeDashoffset:
+  //               circumference - (percentage / 100) * circumference,
+  //           }}
+  //           transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+  //         />
+  //         <text
+  //           className="text-slate-300 font-bold text-lg"
+  //           x="50%"
+  //           y="50%"
+  //           textAnchor="middle"
+  //           dy=".3em"
+  //         >
+  //           {percentage}%
+  //         </text>
+  //       </svg>
 
-        {/* Percentage text */}
-        {/* <motion.div
-          className="relative text-white font-bold text-lg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          {percentage}%
-        </motion.div> */}
+  //       {/* Percentage text */}
+  //       {/* <motion.div
+  //         className="relative text-white font-bold text-lg"
+  //         initial={{ opacity: 0 }}
+  //         animate={{ opacity: 1 }}
+  //         transition={{ delay: 0.5 }}
+  //       >
+  //         {percentage}%
+  //       </motion.div> */}
 
-        {/* Skill name */}
-        <p className="text-gray-300 mt-2 font-bold text-lg">{skill}</p>
-      </div>
-    );
-  };
+  //       {/* Skill name */}
+  //       <p className="text-gray-300 mt-2 font-bold text-lg">{skill}</p>
+  //     </div>
+  //   );
+  // };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="py-20 mt-6"
+    <section
+      id="about"
+      className="
+    min-h-screen
+    bg-[radial-gradient(circle_at_15%_20%,#EDE9FE,transparent_35%),radial-gradient(circle_at_85%_15%,#DBEAFE,transparent_30%)]
+    text-black
+    px-6 sm:px-10 md:px-16 lg:px-24
+    py-20 md:py-28
+    flex flex-col
+    justify-center
+  "
     >
-      <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-        <h2 className="text-4xl font-bold text-white mb-4 px-4">About Me</h2>
-        <p className="text-base lg:text-lg text-slate-100 font-semibold sm:text-lg px-4">
-          I am a web developer with a passion for creating interactive and
-          responsive web applications. I have experience working with
-          JavaScript, React, Next.js, Html, CSS, Git, nodejs etc. I am a quick
-          learner and I am always looking to expand my knowledge and skill set.
-          I am a team player and I am excited to work with others to create
-          amazing applications.
-        </p>
+      {/* Heading */}
+      <div className="text-center mb-12 md:mb-16">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#24222d]">
+          About Me
+        </h2>
+
+        {/* Pink underline */}
+        <div className="w-5 h-1 bg-black rounded-full mx-auto mt-2" />
       </div>
 
-      <h2 className="text-2xl font-bold mb-8 text-center text-white mt-10 ">
-        My Skills
-      </h2>
+      {/* Content */}
+      <div
+        className="
+      max-w-5xl
+      mx-auto
+      w-full
+      flex flex-col-reverse md:flex-row
+      items-center md:items-center
+      justify-between
+      gap-10 md:gap-16
+    "
+      >
+        {/* Text */}
+        <div className="w-full md:w-1/2 text-center md:text-left font-semibold">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-5 text-[#584b8c]">
+            Hey! This is Ayobami
+          </h3>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
-        {skills.map((s) => (
-          <SkillCircle
-            key={s.name}
-            skill={s.name}
-            percentage={s.percentage}
-            color={s.color}
-          />
-        ))}
+          <p className="text-sm sm:text-base text-[#24222d] leading-7">
+            Ayobami Aina is a passionate Frontend Developer
+            <br />
+            with a strong interest in creating beautiful,
+            <br />
+            responsive and interactive websites.
+          </p>
+
+          <p className="text-sm sm:text-base text-[#24222d] leading-7 mt-4">
+            I enjoy working with HTML, CSS, JavaScript,
+            <br />
+            React, Next.js and Tailwind CSS.
+          </p>
+
+          <p className="text-sm sm:text-base text-[#24222d] leading-7 mt-4">
+            I am always learning, building and improving
+            <br />
+            my skills through real-world projects.
+          </p>
+
+          <p className="mt-8 text-sm sm:text-base  text-[#584b8c] font-bold">
+            Let's connect and collaborate!
+          </p>
+        </div>
+
+        {/* Image */}
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          <div
+            className="
+          w-40 h-40
+          sm:w-60 sm:h-60
+          md:w-65 md:h-65
+          overflow-hidden
+          
+        "
+          >
+            <img
+              src="/Images/about-image.png"
+              alt="Profile"
+              className="w-full h-full w-300 h-300 object-cover"
+            />
+          </div>
+        </div>
       </div>
-      <div className="flex justify-center mt-8 ">
+      <div className="flex space-x-4 sm: justify-center md:justify-center lg:justify-center items-center my-12">
+        <Link href="/Contacts">
+          <button className="text-neutral-950 hover:text-white rounded-full bg-slate-100 border-black text-sm  mt-4 transition hover:scale-105 shadow-lg shadow-blue-950 inline-flex items-center gap-2 px-12 py-4 font-medium duration-300 hover:bg-gray-800">
+            Connect
+          </button>
+        </Link>
         <a
           href="/CURRICULUM VITAE.docx"
           download
-          className=" inline-flex items-center rounded-full bg-blue-600 px-6 py-3 font-semibold text-white text-xl transition-all duration-300 hover:scale-105 hover:bg-blue-700 shadow-md shadow-yellow-50"
+          className="text-[#fafafa] rounded-full bg-black text-sm  mt-4 transition hover:scale-105 hover:bg-slate-100 shadow-lg shadow-blue-950 inline-flex items-center gap-2 px-6 py-3  font-medium duration-300 hover:text-black "
         >
-          <span>Download CV</span>
-          <span className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+          Download CV
+          <span className="text-lg">↓</span>
         </a>
       </div>
-
-      <div className="grid place-items-center items-center mt-12 bg-black/50">
-        <div>
-          <h2 className="text-white font-bold text-2xl my-5">Certifications</h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 justify-evenly">
-          {certifications.map((cert) => (
-            <div
-              key={cert.title}
-              className="rounded-xl border border-slate-700 bg-slate-900 p-6 my-8"
-            >
-              <h3 className="text-xl font-semibold text-white">{cert.title}</h3>
-
-              <p className="mt-2 text-slate-50">{cert.issuer}</p>
-
-              <p className="mt-1 text-sm text-slate-50">{cert.year}</p>
-
-              <a
-                href={cert.link}
-                target="_blank"
-                className="mt-4 inline-block text-blue-400 hover:underline"
-              >
-                View Credential →
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
+      <Skills />
+    </section>
   );
 }
