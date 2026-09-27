@@ -8,23 +8,31 @@ import PageTransition from "@/components/pageTransition";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: false,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: false,
 });
 
 const changaOne = Changa_One({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-heading",
+  display: "swap",
+  preload: false,
 });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
